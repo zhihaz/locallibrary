@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Список всех книг</h1>
+  <ul>
+    {% for book in books %}
+      <li>
+        {{ book.book.title }} ({{ book.book.author }}) — 
+        <a href="{% url 'renew-book-librarian' book.pk %}">Обновить дату возврата</a>
+      </li>
+    {% empty %}
+      <li>Книг пока нет.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

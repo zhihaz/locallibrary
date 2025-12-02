@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Мои книги</h1>
+
+  {% if bookinstance_list %}
+    <ul>
+      {% for bookinst in bookinstance_list %}
+        <li>{{ bookinst.book.title }} — {{ bookinst.due_back }} ({{ bookinst.status }})</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>У вас нет взятых книг.</p>
+  {% endif %}
+{% endblock %}

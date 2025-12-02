@@ -1,0 +1,8 @@
+<h1>Список всех книг</h1>
+<ul>
+  {% for book in books %}
+    <li>
+      <a href="{% url 'renew-book-librarian' book.id %}">{{ book.book.title }} ({{ book.book.author }})</a>
+    </li>
+  {% endfor %}
+</ul>
